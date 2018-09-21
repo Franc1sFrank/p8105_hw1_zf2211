@@ -22,10 +22,28 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
 
 ``` r
-sed.seed = 1234
+sed.seed = 777
 rs = runif(10, 0, 5)
 df = tibble(
   rs,
-  vec_logical = c(rs>2)
+  vec_logical = rs>2,
+  vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
+  vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
+#check df
+df
 ```
+
+    ## # A tibble: 10 x 4
+    ##       rs vec_logical vec_character vec_factor
+    ##    <dbl> <lgl>       <chr>         <chr>     
+    ##  1 2.68  TRUE        usa           M         
+    ##  2 4.90  TRUE        canada        M         
+    ##  3 3.37  TRUE        france        M         
+    ##  4 0.685 FALSE       england       F         
+    ##  5 3.53  TRUE        japan         M         
+    ##  6 4.22  TRUE        sweden        F         
+    ##  7 1.96  FALSE       korea         M         
+    ##  8 3.98  TRUE        germany       F         
+    ##  9 0.516 FALSE       italy         M         
+    ## 10 0.648 FALSE       austria       F

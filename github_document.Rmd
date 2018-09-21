@@ -9,10 +9,14 @@ output: github_document
 
 ```{r data frame}
 library(tidyverse)
-sed.seed = 1234
+sed.seed = 777
 rs = runif(10, 0, 5)
 df = tibble(
   rs,
-  vec_logical = c(rs>2)
+  vec_logical = rs>2,
+  vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
+  vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
+#check df
+df
 ```
