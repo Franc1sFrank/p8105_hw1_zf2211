@@ -8,6 +8,11 @@ output: github_document
 # Problem 1
 
 ```{r data frame}
-x = runif(10, 1, 5)
-
+library(tidyverse)
+rs = runif(10, 1, 5)
+df = tibble(
+  rs,
+  vec_logical = c(rs>2)
+  
+)
 ```
