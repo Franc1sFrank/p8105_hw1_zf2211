@@ -24,4 +24,14 @@ mean(df$rs)
 mean(df$vec_logical)
 mean(df$vec_character)
 mean(df$vec_factor)
+###We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
+
 ```
+
+```{r convert variables}
+as.numeric(df$vec_logical)
+as.numeric(df$vec_character)
+as.numeric(df$vec_factor)
+###It shows logical "TRUE" and "FALSE" could be transformed into numeric 1 and 0, while character and factor variables could not be transformed.
+```
+

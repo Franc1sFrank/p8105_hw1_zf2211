@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 1.25  FALSE       usa           M         
-    ##  2 3.67  TRUE        canada        M         
-    ##  3 2.96  TRUE        france        M         
-    ##  4 0.808 FALSE       england       F         
-    ##  5 2.54  TRUE        japan         M         
-    ##  6 3.99  TRUE        sweden        F         
-    ##  7 2.33  TRUE        korea         M         
-    ##  8 1.93  FALSE       germany       F         
-    ##  9 3.86  TRUE        italy         M         
-    ## 10 4.51  TRUE        austria       F
+    ##  1  4.03 TRUE        usa           M         
+    ##  2  3.70 TRUE        canada        M         
+    ##  3  1.79 FALSE       france        M         
+    ##  4  1.77 FALSE       england       F         
+    ##  5  1.95 FALSE       japan         M         
+    ##  6  1.66 FALSE       sweden        F         
+    ##  7  1.03 FALSE       korea         M         
+    ##  8  4.87 TRUE        germany       F         
+    ##  9  1.14 FALSE       italy         M         
+    ## 10  3.87 TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.785369
+    ## [1] 2.580456
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.7
+    ## [1] 0.4
 
 ``` r
 mean(df$vec_character)
@@ -78,3 +78,33 @@ mean(df$vec_factor)
     ## returning NA
 
     ## [1] NA
+
+``` r
+###We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
+```
+
+``` r
+as.numeric(df$vec_logical)
+```
+
+    ##  [1] 1 1 0 0 0 0 0 1 0 1
+
+``` r
+as.numeric(df$vec_character)
+```
+
+    ## Warning: NAs introduced by coercion
+
+    ##  [1] NA NA NA NA NA NA NA NA NA NA
+
+``` r
+as.numeric(df$vec_factor)
+```
+
+    ## Warning: NAs introduced by coercion
+
+    ##  [1] NA NA NA NA NA NA NA NA NA NA
+
+``` r
+###It shows logical "TRUE" and "FALSE" could be transformed into numeric 1 and 0, while character and factor variables could not be transformed.
+```
