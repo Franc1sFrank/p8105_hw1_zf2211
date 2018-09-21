@@ -2,7 +2,7 @@
 title: "p8105_hw1_zf2211"
 author: "Francis"
 date: "9/21/2018"
-output: html_document
+output: github_document
 ---
 
 # Problem 1
