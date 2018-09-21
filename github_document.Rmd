@@ -47,7 +47,7 @@ as.numeric(
 
 # Problem 2
 
-```{r}
-
+```{r data frame 2}
+set.seed = 777
 ```
 
