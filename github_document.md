@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 4.24  TRUE        usa           M         
-    ##  2 3.81  TRUE        canada        M         
-    ##  3 0.379 FALSE       france        M         
-    ##  4 0.381 FALSE       england       F         
-    ##  5 3.87  TRUE        japan         M         
-    ##  6 4.18  TRUE        sweden        F         
-    ##  7 4.50  TRUE        korea         M         
-    ##  8 3.39  TRUE        germany       F         
-    ##  9 2.68  TRUE        italy         M         
-    ## 10 0.424 FALSE       austria       F
+    ##  1 3.64  TRUE        usa           M         
+    ##  2 4.59  TRUE        canada        M         
+    ##  3 4.61  TRUE        france        M         
+    ##  4 4.13  TRUE        england       F         
+    ##  5 4.37  TRUE        japan         M         
+    ##  6 3.67  TRUE        sweden        F         
+    ##  7 1.58  FALSE       korea         M         
+    ##  8 4.71  TRUE        germany       F         
+    ##  9 0.808 FALSE       italy         M         
+    ## 10 3.46  TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.787212
+    ## [1] 3.556991
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.7
+    ## [1] 0.8
 
 ``` r
 mean(df$vec_character)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 1 0 0 1 1 1 1 1 0
+    ##  [1] 1 1 1 1 1 1 0 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -163,4 +163,29 @@ df2
     ## 10 -0.379 -1.44   FALSE                   0 FALSE      
     ## # ... with 990 more rows
 
-the size of the dataset is 1000 rows \* 5 columes the mean and median of x is 0.0019766 and -0.0187056 the proportion of cases for which the logical vector is TRUE is 0.001)
+the size of the dataset is 1000 rows \* 5 columes. the mean and median of x is 0.0019766 and -0.0187056. the proportion of cases for which the logical vector is TRUE is 0.502).
+
+``` r
+library(ggplot2)
+ggplot(df2, aes(x = x, y = y, color = vec_logical2)) + geom_point()
+```
+
+![](github_document_files/figure-markdown_github/scatterplot-1.png)
+
+``` r
+ggsave("df2.pdf" )
+```
+
+    ## Saving 7 x 5 in image
+
+``` r
+ggplot(df2, aes(x = x, y = y, color = vec_numeric2)) + geom_point()
+```
+
+![](github_document_files/figure-markdown_github/scatterplot-2.png)
+
+``` r
+ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
+```
+
+![](github_document_files/figure-markdown_github/scatterplot-3.png)

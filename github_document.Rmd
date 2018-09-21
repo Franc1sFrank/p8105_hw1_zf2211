@@ -61,12 +61,15 @@ df2 = tibble(x, y, vec_logical2, vec_numeric2, vec_factor2)
 df2
 ```
 
-the size of the dataset is 1000 rows * 5 columes
-the mean and median of x is `r mean(x)` and `r median(x)`
-the proportion of cases for which the logical vector is TRUE is `r (vec_logical2 = TRUE)/1000`)
+the size of the dataset is `r nrow(df2)` rows * `r ncol(df2)` columes.
+the mean and median of x is `r mean(x)` and `r median(x)`.
+the proportion of cases for which the logical vector is TRUE is `r sum(vec_logical2)/length(vec_logical2)`).
 
 ```{r scatterplot}
-
-
+library(ggplot2)
+ggplot(df2, aes(x = x, y = y, color = vec_logical2)) + geom_point()
+ggsave("df2.pdf" )
+ggplot(df2, aes(x = x, y = y, color = vec_numeric2)) + geom_point()
+ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
 ```
 
