@@ -32,6 +32,16 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 as.numeric(df$vec_character)
 as.numeric(df$vec_factor)
-###It shows logical "TRUE" and "FALSE" could be transformed into numeric 1 and 0, while character and factor variables could not be transformed.
+###It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
+```
+
+```{r two step convert}
+as.numeric(
+  as.factor(df$vec_character)
+)
+as.numeric(
+  as.character(df$vec_factor)
+)
+###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 ```
 

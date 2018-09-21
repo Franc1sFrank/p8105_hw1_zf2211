@@ -37,23 +37,23 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1  4.03 TRUE        usa           M         
-    ##  2  3.70 TRUE        canada        M         
-    ##  3  1.79 FALSE       france        M         
-    ##  4  1.77 FALSE       england       F         
-    ##  5  1.95 FALSE       japan         M         
-    ##  6  1.66 FALSE       sweden        F         
-    ##  7  1.03 FALSE       korea         M         
-    ##  8  4.87 TRUE        germany       F         
-    ##  9  1.14 FALSE       italy         M         
-    ## 10  3.87 TRUE        austria       F
+    ##  1 3.28  TRUE        usa           M         
+    ##  2 0.312 FALSE       canada        M         
+    ##  3 3.54  TRUE        france        M         
+    ##  4 0.153 FALSE       england       F         
+    ##  5 1.48  FALSE       japan         M         
+    ##  6 1.79  FALSE       sweden        F         
+    ##  7 4.40  TRUE        korea         M         
+    ##  8 3.19  TRUE        germany       F         
+    ##  9 0.145 FALSE       italy         M         
+    ## 10 1.01  FALSE       austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.580456
+    ## [1] 1.930019
 
 ``` r
 mean(df$vec_logical)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 1 0 0 0 0 0 1 0 1
+    ##  [1] 1 0 1 0 0 0 1 1 0 0
 
 ``` r
 as.numeric(df$vec_character)
@@ -106,5 +106,27 @@ as.numeric(df$vec_factor)
     ##  [1] NA NA NA NA NA NA NA NA NA NA
 
 ``` r
-###It shows logical "TRUE" and "FALSE" could be transformed into numeric 1 and 0, while character and factor variables could not be transformed.
+###It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
+```
+
+``` r
+as.numeric(
+  as.factor(df$vec_character)
+)
+```
+
+    ##  [1] 10  2  4  3  7  9  8  5  6  1
+
+``` r
+as.numeric(
+  as.character(df$vec_factor)
+)
+```
+
+    ## Warning: NAs introduced by coercion
+
+    ##  [1] NA NA NA NA NA NA NA NA NA NA
+
+``` r
+###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 ```
