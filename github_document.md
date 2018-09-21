@@ -35,25 +35,25 @@ df
 ```
 
     ## # A tibble: 10 x 4
-    ##        rs vec_logical vec_character vec_factor
-    ##     <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.90   TRUE        usa           M         
-    ##  2 0.0764 FALSE       canada        M         
-    ##  3 4.22   TRUE        france        M         
-    ##  4 1.65   FALSE       england       F         
-    ##  5 4.53   TRUE        japan         M         
-    ##  6 3.41   TRUE        sweden        F         
-    ##  7 2.58   TRUE        korea         M         
-    ##  8 3.15   TRUE        germany       F         
-    ##  9 1.55   FALSE       italy         M         
-    ## 10 2.26   TRUE        austria       F
+    ##       rs vec_logical vec_character vec_factor
+    ##    <dbl> <lgl>       <chr>         <chr>     
+    ##  1 4.24  TRUE        usa           M         
+    ##  2 3.81  TRUE        canada        M         
+    ##  3 0.379 FALSE       france        M         
+    ##  4 0.381 FALSE       england       F         
+    ##  5 3.87  TRUE        japan         M         
+    ##  6 4.18  TRUE        sweden        F         
+    ##  7 4.50  TRUE        korea         M         
+    ##  8 3.39  TRUE        germany       F         
+    ##  9 2.68  TRUE        italy         M         
+    ## 10 0.424 FALSE       austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.733058
+    ## [1] 2.787212
 
 ``` r
 mean(df$vec_logical)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 0 1 0 1 1 1 1 0 1
+    ##  [1] 1 1 0 0 1 1 1 1 1 0
 
 ``` r
 as.numeric(df$vec_character)
@@ -163,4 +163,4 @@ df2
     ## 10 -0.379 -1.44   FALSE                   0 FALSE      
     ## # ... with 990 more rows
 
-the size of the dataset is 1000 \* 5 the mean and median of x is 0.0019766 and -0.0187056 the proportion of cases for which the logical vector is TRUE is 0.001)
+the size of the dataset is 1000 rows \* 5 columes the mean and median of x is 0.0019766 and -0.0187056 the proportion of cases for which the logical vector is TRUE is 0.001)
