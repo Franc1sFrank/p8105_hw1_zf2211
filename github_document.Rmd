@@ -4,6 +4,10 @@ author: "Francis"
 date: "9/21/2018"
 output: html_document
 ---
-```{r}
+
+# Problem 1
+
+```{r data frame}
+x = runif(10, 1, 5)
 
 ```
