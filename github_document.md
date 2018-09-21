@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##        rs vec_logical vec_character vec_factor
     ##     <dbl> <lgl>       <chr>         <chr>     
-    ##  1 1.45   FALSE       usa           M         
-    ##  2 1.77   FALSE       canada        M         
-    ##  3 2.09   TRUE        france        M         
-    ##  4 2.35   TRUE        england       F         
-    ##  5 4.79   TRUE        japan         M         
-    ##  6 0.0786 FALSE       sweden        F         
-    ##  7 4.78   TRUE        korea         M         
-    ##  8 4.99   TRUE        germany       F         
-    ##  9 0.583  FALSE       italy         M         
-    ## 10 3.92   TRUE        austria       F
+    ##  1 3.90   TRUE        usa           M         
+    ##  2 0.0764 FALSE       canada        M         
+    ##  3 4.22   TRUE        france        M         
+    ##  4 1.65   FALSE       england       F         
+    ##  5 4.53   TRUE        japan         M         
+    ##  6 3.41   TRUE        sweden        F         
+    ##  7 2.58   TRUE        korea         M         
+    ##  8 3.15   TRUE        germany       F         
+    ##  9 1.55   FALSE       italy         M         
+    ## 10 2.26   TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.680662
+    ## [1] 2.733058
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.6
+    ## [1] 0.7
 
 ``` r
 mean(df$vec_character)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 0 0 1 1 1 0 1 1 0 1
+    ##  [1] 1 0 1 0 1 1 1 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -144,4 +144,23 @@ vec_numeric2 = as.numeric(vec_logical2)
 vec_factor2 = as.factor(vec_logical2)
 
 df2 = tibble(x, y, vec_logical2, vec_numeric2, vec_factor2)
+
+df2
 ```
+
+    ## # A tibble: 1,000 x 5
+    ##         x       y vec_logical2 vec_numeric2 vec_factor2
+    ##     <dbl>   <dbl> <lgl>               <dbl> <fct>      
+    ##  1  0.490 -0.374  TRUE                    1 TRUE       
+    ##  2 -0.399 -0.306  FALSE                   0 FALSE      
+    ##  3  0.511  0.312  TRUE                    1 TRUE       
+    ##  4 -0.399 -1.19   FALSE                   0 FALSE      
+    ##  5  1.64   0.0243 TRUE                    1 TRUE       
+    ##  6  0.621  0.104  TRUE                    1 TRUE       
+    ##  7  0.203  2.12   TRUE                    1 TRUE       
+    ##  8  1.11   1.06   TRUE                    1 TRUE       
+    ##  9 -0.206 -1.26   FALSE                   0 FALSE      
+    ## 10 -0.379 -1.44   FALSE                   0 FALSE      
+    ## # ... with 990 more rows
+
+the size of the dataset is 1000 \* 5 the mean and median of x is 0.0019766 and -0.0187056 the proportion of cases for which the logical vector is TRUE is 0.001)
