@@ -9,6 +9,7 @@ output: github_document
 
 ```{r data frame}
 library(tidyverse)
+sed.seed = 1234
 rs = runif(10, 0, 5)
 df = tibble(
   rs,

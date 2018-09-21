@@ -22,6 +22,7 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
 
 ``` r
+sed.seed = 1234
 rs = runif(10, 0, 5)
 df = tibble(
   rs,
