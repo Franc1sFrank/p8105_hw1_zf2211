@@ -37,13 +37,44 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.42  TRUE        usa           M         
-    ##  2 4.55  TRUE        canada        M         
-    ##  3 3.99  TRUE        france        M         
-    ##  4 0.508 FALSE       england       F         
-    ##  5 1.63  FALSE       japan         M         
-    ##  6 2.79  TRUE        sweden        F         
-    ##  7 0.411 FALSE       korea         M         
-    ##  8 3.80  TRUE        germany       F         
-    ##  9 0.373 FALSE       italy         M         
-    ## 10 3.45  TRUE        austria       F
+    ##  1 1.25  FALSE       usa           M         
+    ##  2 3.67  TRUE        canada        M         
+    ##  3 2.96  TRUE        france        M         
+    ##  4 0.808 FALSE       england       F         
+    ##  5 2.54  TRUE        japan         M         
+    ##  6 3.99  TRUE        sweden        F         
+    ##  7 2.33  TRUE        korea         M         
+    ##  8 1.93  FALSE       germany       F         
+    ##  9 3.86  TRUE        italy         M         
+    ## 10 4.51  TRUE        austria       F
+
+``` r
+#mean of variables in dataframe
+mean(df$rs)
+```
+
+    ## [1] 2.785369
+
+``` r
+mean(df$vec_logical)
+```
+
+    ## [1] 0.7
+
+``` r
+mean(df$vec_character)
+```
+
+    ## Warning in mean.default(df$vec_character): argument is not numeric or
+    ## logical: returning NA
+
+    ## [1] NA
+
+``` r
+mean(df$vec_factor)
+```
+
+    ## Warning in mean.default(df$vec_factor): argument is not numeric or logical:
+    ## returning NA
+
+    ## [1] NA

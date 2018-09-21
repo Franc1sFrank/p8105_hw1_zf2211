@@ -19,4 +19,9 @@ df = tibble(
 )
 #print df
 df
+#mean of variables in dataframe
+mean(df$rs)
+mean(df$vec_logical)
+mean(df$vec_character)
+mean(df$vec_factor)
 ```
