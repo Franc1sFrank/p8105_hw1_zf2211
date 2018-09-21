@@ -48,6 +48,6 @@ as.numeric(
 # Problem 2
 
 ```{r data frame 2}
-set.seed = 777
+
 ```
 
