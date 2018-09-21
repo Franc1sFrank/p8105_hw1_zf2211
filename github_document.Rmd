@@ -45,3 +45,9 @@ as.numeric(
 ###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 ```
 
+# Problem 2
+
+```{r}
+
+```
+

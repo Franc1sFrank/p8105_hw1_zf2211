@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.28  TRUE        usa           M         
-    ##  2 0.312 FALSE       canada        M         
-    ##  3 3.54  TRUE        france        M         
-    ##  4 0.153 FALSE       england       F         
-    ##  5 1.48  FALSE       japan         M         
-    ##  6 1.79  FALSE       sweden        F         
-    ##  7 4.40  TRUE        korea         M         
-    ##  8 3.19  TRUE        germany       F         
-    ##  9 0.145 FALSE       italy         M         
-    ## 10 1.01  FALSE       austria       F
+    ##  1 0.691 FALSE       usa           M         
+    ##  2 0.901 FALSE       canada        M         
+    ##  3 3.96  TRUE        france        M         
+    ##  4 0.604 FALSE       england       F         
+    ##  5 3.62  TRUE        japan         M         
+    ##  6 1.87  FALSE       sweden        F         
+    ##  7 1.51  FALSE       korea         M         
+    ##  8 2.97  TRUE        germany       F         
+    ##  9 2.15  TRUE        italy         M         
+    ## 10 2.85  TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 1.930019
+    ## [1] 2.11191
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.4
+    ## [1] 0.5
 
 ``` r
 mean(df$vec_character)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 0 1 0 0 0 1 1 0 0
+    ##  [1] 0 0 1 0 1 0 0 1 1 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -130,3 +130,6 @@ as.numeric(
 ``` r
 ###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 ```
+
+Problem 2
+=========
