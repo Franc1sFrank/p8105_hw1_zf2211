@@ -68,8 +68,11 @@ the proportion of cases for which the logical vector is TRUE is `r sum(vec_logic
 ```{r scatterplot}
 library(ggplot2)
 ggplot(df2, aes(x = x, y = y, color = vec_logical2)) + geom_point()
-ggsave("df2.pdf" )
+ggsave("df2.pdf", height = 5, width = 7 )
+###save the graph as df2.pdf, let the height be 5, width be 7.
 ggplot(df2, aes(x = x, y = y, color = vec_numeric2)) + geom_point()
 ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
+
+###From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.
 ```
 

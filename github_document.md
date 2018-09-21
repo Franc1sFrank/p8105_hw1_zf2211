@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.64  TRUE        usa           M         
-    ##  2 4.59  TRUE        canada        M         
-    ##  3 4.61  TRUE        france        M         
-    ##  4 4.13  TRUE        england       F         
-    ##  5 4.37  TRUE        japan         M         
-    ##  6 3.67  TRUE        sweden        F         
-    ##  7 1.58  FALSE       korea         M         
-    ##  8 4.71  TRUE        germany       F         
-    ##  9 0.808 FALSE       italy         M         
-    ## 10 3.46  TRUE        austria       F
+    ##  1 1.25  FALSE       usa           M         
+    ##  2 3.74  TRUE        canada        M         
+    ##  3 0.884 FALSE       france        M         
+    ##  4 0.420 FALSE       england       F         
+    ##  5 1.24  FALSE       japan         M         
+    ##  6 0.971 FALSE       sweden        F         
+    ##  7 4.39  TRUE        korea         M         
+    ##  8 3.62  TRUE        germany       F         
+    ##  9 0.932 FALSE       italy         M         
+    ## 10 4.06  TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 3.556991
+    ## [1] 2.150256
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.8
+    ## [1] 0.4
 
 ``` r
 mean(df$vec_character)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 1 1 1 1 1 0 1 0 1
+    ##  [1] 0 1 0 0 0 0 1 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -173,12 +173,8 @@ ggplot(df2, aes(x = x, y = y, color = vec_logical2)) + geom_point()
 ![](github_document_files/figure-markdown_github/scatterplot-1.png)
 
 ``` r
-ggsave("df2.pdf" )
-```
-
-    ## Saving 7 x 5 in image
-
-``` r
+ggsave("df2.pdf", height = 5, width = 7 )
+###save the graph as df2.pdf, let the height be 5, width be 7.
 ggplot(df2, aes(x = x, y = y, color = vec_numeric2)) + geom_point()
 ```
 
@@ -189,3 +185,7 @@ ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
 ```
 
 ![](github_document_files/figure-markdown_github/scatterplot-3.png)
+
+``` r
+###From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.
+```
