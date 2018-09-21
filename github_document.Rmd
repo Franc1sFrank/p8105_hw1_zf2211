@@ -48,6 +48,15 @@ as.numeric(
 # Problem 2
 
 ```{r data frame 2}
+set.seed(777)
+
+x = rnorm(1000)
+y = rnorm(1000)
+vec_logical2 = x + y > 0
+vec_numeric2 = as.numeric(vec_logical2)
+vec_factor2 = as.factor(vec_logical2)
+
+
 
 ```
 

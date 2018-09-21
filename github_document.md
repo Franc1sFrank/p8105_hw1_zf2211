@@ -37,29 +37,29 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.90  TRUE        usa           M         
-    ##  2 0.984 FALSE       canada        M         
-    ##  3 0.980 FALSE       france        M         
-    ##  4 0.219 FALSE       england       F         
-    ##  5 3.94  TRUE        japan         M         
-    ##  6 1.77  FALSE       sweden        F         
-    ##  7 2.13  TRUE        korea         M         
-    ##  8 2.85  TRUE        germany       F         
-    ##  9 1.63  FALSE       italy         M         
-    ## 10 4.52  TRUE        austria       F
+    ##  1 3.84  TRUE        usa           M         
+    ##  2 3.92  TRUE        canada        M         
+    ##  3 0.536 FALSE       france        M         
+    ##  4 2.33  TRUE        england       F         
+    ##  5 3.91  TRUE        japan         M         
+    ##  6 2.79  TRUE        sweden        F         
+    ##  7 1.33  FALSE       korea         M         
+    ##  8 4.78  TRUE        germany       F         
+    ##  9 1.68  FALSE       italy         M         
+    ## 10 2.98  TRUE        austria       F
 
 ``` r
 #mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.291689
+    ## [1] 2.810252
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.5
+    ## [1] 0.7
 
 ``` r
 mean(df$vec_character)
@@ -87,7 +87,7 @@ mean(df$vec_factor)
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 0 0 0 1 0 1 1 0 1
+    ##  [1] 1 1 0 1 1 1 0 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -133,3 +133,13 @@ as.numeric(
 
 Problem 2
 =========
+
+``` r
+set.seed(777)
+
+x = rnorm(1000)
+y = rnorm(1000)
+vec_logical2 = x + y > 0
+vec_numeric2 = as.numeric(vec_logical2)
+vec_factor2 = as.factor(vec_logical2)
+```
