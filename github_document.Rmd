@@ -9,10 +9,9 @@ output: github_document
 
 ```{r data frame}
 library(tidyverse)
-rs = runif(10, 1, 5)
+rs = runif(10, 0, 5)
 df = tibble(
   rs,
   vec_logical = c(rs>2)
-  
 )
 ```

@@ -22,10 +22,9 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
 
 ``` r
-rs = runif(10, 1, 5)
+rs = runif(10, 0, 5)
 df = tibble(
   rs,
   vec_logical = c(rs>2)
-  
 )
 ```
