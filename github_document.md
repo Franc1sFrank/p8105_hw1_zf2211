@@ -30,20 +30,20 @@ df = tibble(
   vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
   vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
-#check df
+#print df
 df
 ```
 
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 2.68  TRUE        usa           M         
-    ##  2 4.90  TRUE        canada        M         
-    ##  3 3.37  TRUE        france        M         
-    ##  4 0.685 FALSE       england       F         
-    ##  5 3.53  TRUE        japan         M         
-    ##  6 4.22  TRUE        sweden        F         
-    ##  7 1.96  FALSE       korea         M         
-    ##  8 3.98  TRUE        germany       F         
-    ##  9 0.516 FALSE       italy         M         
-    ## 10 0.648 FALSE       austria       F
+    ##  1 3.42  TRUE        usa           M         
+    ##  2 4.55  TRUE        canada        M         
+    ##  3 3.99  TRUE        france        M         
+    ##  4 0.508 FALSE       england       F         
+    ##  5 1.63  FALSE       japan         M         
+    ##  6 2.79  TRUE        sweden        F         
+    ##  7 0.411 FALSE       korea         M         
+    ##  8 3.80  TRUE        germany       F         
+    ##  9 0.373 FALSE       italy         M         
+    ## 10 3.45  TRUE        austria       F

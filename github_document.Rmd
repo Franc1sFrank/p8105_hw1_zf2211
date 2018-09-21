@@ -17,6 +17,6 @@ df = tibble(
   vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
   vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
-#check df
+#print df
 df
 ```
