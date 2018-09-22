@@ -30,36 +30,39 @@ df = tibble(
   vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
   vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
-#print df
+```
+
+``` r
 df
 ```
 
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 3.29  TRUE        usa           M         
-    ##  2 3.55  TRUE        canada        M         
-    ##  3 3.13  TRUE        france        M         
-    ##  4 4.30  TRUE        england       F         
-    ##  5 4.15  TRUE        japan         M         
-    ##  6 3.44  TRUE        sweden        F         
-    ##  7 1.00  FALSE       korea         M         
-    ##  8 2.25  TRUE        germany       F         
-    ##  9 0.617 FALSE       italy         M         
-    ## 10 0.628 FALSE       austria       F
+    ##  1 0.785 FALSE       usa           M         
+    ##  2 1.89  FALSE       canada        M         
+    ##  3 1.10  FALSE       france        M         
+    ##  4 2.90  TRUE        england       F         
+    ##  5 3.61  TRUE        japan         M         
+    ##  6 1.83  FALSE       sweden        F         
+    ##  7 1.08  FALSE       korea         M         
+    ##  8 2.24  TRUE        germany       F         
+    ##  9 1.01  FALSE       italy         M         
+    ## 10 4.12  TRUE        austria       F
+
+mean of variables in dataframe
 
 ``` r
-#mean of variables in dataframe
 mean(df$rs)
 ```
 
-    ## [1] 2.634964
+    ## [1] 2.056167
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.7
+    ## [1] 0.4
 
 ``` r
 mean(df$vec_character)
@@ -79,15 +82,13 @@ mean(df$vec_factor)
 
     ## [1] NA
 
-``` r
-###We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
-```
+We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
 
 ``` r
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 1 1 1 1 1 1 0 1 0 0
+    ##  [1] 0 0 0 1 1 0 0 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -105,9 +106,7 @@ as.numeric(df$vec_factor)
 
     ##  [1] NA NA NA NA NA NA NA NA NA NA
 
-``` r
-###It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
-```
+It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
 
 ``` r
 as.numeric(
@@ -127,9 +126,7 @@ as.numeric(
 
     ##  [1] NA NA NA NA NA NA NA NA NA NA
 
-``` r
-###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
-```
+If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 
 Problem 2
 =========
@@ -186,6 +183,4 @@ ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
 
 ![](github_document_files/figure-markdown_github/scatterplot-3.png)
 
-``` r
-###From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.
-```
+From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.

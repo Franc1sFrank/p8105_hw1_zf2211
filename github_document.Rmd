@@ -17,23 +17,28 @@ df = tibble(
   vec_character = c("usa", "canada", "france", "england", "japan", "sweden", "korea", "germany", "italy", "austria"),
   vec_factor = c("M", "M", "M", "F", "M", "F", "M", "F", "M", "F")
 )
-#print df
+```
+
+```{r print df}
 df
-#mean of variables in dataframe
+```
+
+mean of variables in dataframe
+
+```{r}
 mean(df$rs)
 mean(df$vec_logical)
 mean(df$vec_character)
 mean(df$vec_factor)
-###We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
-
 ```
+We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
 
 ```{r convert variables}
 as.numeric(df$vec_logical)
 as.numeric(df$vec_character)
 as.numeric(df$vec_factor)
-###It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
 ```
+It shows logical "TRUE" and "FALSE" could be converted into numeric 1 and 0, while character and factor variables could not be converted (respectively replaced by "NA" after coercion).
 
 ```{r two step convert}
 as.numeric(
@@ -42,8 +47,10 @@ as.numeric(
 as.numeric(
   as.character(df$vec_factor)
 )
-###If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
 ```
+
+If I convert character to factor then numeric, it will work. It seems those characters refer to data in some database? While converting factor to character then numeric doesn't work (respectively replaced by "NA" after coercion).
+
 
 # Problem 2
 
@@ -72,7 +79,8 @@ ggsave("df2.pdf", height = 5, width = 7 )
 ###save the graph as df2.pdf, let the height be 5, width be 7.
 ggplot(df2, aes(x = x, y = y, color = vec_numeric2)) + geom_point()
 ggplot(df2, aes(x = x, y = y, color = vec_factor2)) + geom_point()
-
-###From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.
 ```
+
+From the color scales we can see that the color of the dots in first(logical vector) and third(factor vector) is bipolar, while the second(numeric vector) is gradual.
+
 
