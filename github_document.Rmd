@@ -19,11 +19,12 @@ df = tibble(
 )
 ```
 
+Print df
 ```{r print df}
 df
 ```
 
-mean of variables in dataframe
+Mean of variables in dataframe
 
 ```{r}
 mean(df$rs)
@@ -31,7 +32,7 @@ mean(df$vec_logical)
 mean(df$vec_character)
 mean(df$vec_factor)
 ```
-We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
+We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor variables could not be transformed, their means could not be calculated.
 
 ```{r convert variables}
 as.numeric(df$vec_logical)
@@ -68,9 +69,9 @@ df2 = tibble(x, y, vec_logical2, vec_numeric2, vec_factor2)
 df2
 ```
 
-the size of the dataset is `r nrow(df2)` rows * `r ncol(df2)` columes.
-the mean and median of x is `r mean(x)` and `r median(x)`.
-the proportion of cases for which the logical vector is TRUE is `r sum(vec_logical2)/length(vec_logical2)`).
+The size of the dataset is `r nrow(df2)` rows * `r ncol(df2)` columes.
+The mean and median of x is `r mean(x)` and `r median(x)`.
+The proportion of cases for which the logical vector is TRUE is `r sum(vec_logical2)/length(vec_logical2)`).
 
 ```{r scatterplot}
 library(ggplot2)

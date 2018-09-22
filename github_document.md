@@ -32,6 +32,8 @@ df = tibble(
 )
 ```
 
+Print df
+
 ``` r
 df
 ```
@@ -39,30 +41,30 @@ df
     ## # A tibble: 10 x 4
     ##       rs vec_logical vec_character vec_factor
     ##    <dbl> <lgl>       <chr>         <chr>     
-    ##  1 0.785 FALSE       usa           M         
-    ##  2 1.89  FALSE       canada        M         
-    ##  3 1.10  FALSE       france        M         
-    ##  4 2.90  TRUE        england       F         
-    ##  5 3.61  TRUE        japan         M         
-    ##  6 1.83  FALSE       sweden        F         
-    ##  7 1.08  FALSE       korea         M         
-    ##  8 2.24  TRUE        germany       F         
-    ##  9 1.01  FALSE       italy         M         
-    ## 10 4.12  TRUE        austria       F
+    ##  1 1.41  FALSE       usa           M         
+    ##  2 1.45  FALSE       canada        M         
+    ##  3 4.85  TRUE        france        M         
+    ##  4 1.72  FALSE       england       F         
+    ##  5 2.67  TRUE        japan         M         
+    ##  6 2.93  TRUE        sweden        F         
+    ##  7 2.11  TRUE        korea         M         
+    ##  8 4.60  TRUE        germany       F         
+    ##  9 0.449 FALSE       italy         M         
+    ## 10 4.29  TRUE        austria       F
 
-mean of variables in dataframe
+Mean of variables in dataframe
 
 ``` r
 mean(df$rs)
 ```
 
-    ## [1] 2.056167
+    ## [1] 2.647319
 
 ``` r
 mean(df$vec_logical)
 ```
 
-    ## [1] 0.4
+    ## [1] 0.6
 
 ``` r
 mean(df$vec_character)
@@ -82,13 +84,13 @@ mean(df$vec_factor)
 
     ## [1] NA
 
-We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor cannot be transformed, their means could not be calculated.
+We can calculate numeric and logical vectors' means because the logical vector "FALSE" and "TRUE" was transformed into numeric 0 and 1. Since character and factor variables could not be transformed, their means could not be calculated.
 
 ``` r
 as.numeric(df$vec_logical)
 ```
 
-    ##  [1] 0 0 0 1 1 0 0 1 0 1
+    ##  [1] 0 0 1 0 1 1 1 1 0 1
 
 ``` r
 as.numeric(df$vec_character)
@@ -160,7 +162,7 @@ df2
     ## 10 -0.379 -1.44   FALSE                   0 FALSE      
     ## # ... with 990 more rows
 
-the size of the dataset is 1000 rows \* 5 columes. the mean and median of x is 0.0019766 and -0.0187056. the proportion of cases for which the logical vector is TRUE is 0.502).
+The size of the dataset is 1000 rows \* 5 columes. The mean and median of x is 0.0019766 and -0.0187056. The proportion of cases for which the logical vector is TRUE is 0.502).
 
 ``` r
 library(ggplot2)
